@@ -15,6 +15,7 @@
 		84F9ECC91BF949DE000FC860 /* TextFieldsAndDelegatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9ECC81BF949DE000FC860 /* TextFieldsAndDelegatesTests.swift */; };
 		84F9ECD41BF949DE000FC860 /* TextFieldsAndDelegatesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9ECD31BF949DE000FC860 /* TextFieldsAndDelegatesUITests.swift */; };
 		84F9ECE21BF950EF000FC860 /* ZipCodeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9ECE11BF950EF000FC860 /* ZipCodeTextFieldDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		84F9ECE51BFAD066000FC860 /* CurrencyTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9ECE41BFAD066000FC860 /* CurrencyTextFieldDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		84F9ECD31BF949DE000FC860 /* TextFieldsAndDelegatesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsAndDelegatesUITests.swift; sourceTree = "<group>"; };
 		84F9ECD51BF949DE000FC860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F9ECE11BF950EF000FC860 /* ZipCodeTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipCodeTextFieldDelegate.swift; sourceTree = "<group>"; };
+		84F9ECE41BFAD066000FC860 /* CurrencyTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				84F9ECE11BF950EF000FC860 /* ZipCodeTextFieldDelegate.swift */,
+				84F9ECE41BFAD066000FC860 /* CurrencyTextFieldDelegate.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F9ECB61BF949DE000FC860 /* ViewController.swift in Sources */,
+				84F9ECE51BFAD066000FC860 /* CurrencyTextFieldDelegate.swift in Sources */,
 				84F9ECE21BF950EF000FC860 /* ZipCodeTextFieldDelegate.swift in Sources */,
 				84F9ECB41BF949DE000FC860 /* AppDelegate.swift in Sources */,
 			);

@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
   var textArray: [UITextField]!
   
   let zipCodeDelegate = ZipCodeTextFieldDelegate()
+  let currencyDelegate = CurrencyTextFieldDelegate()
   
   // Background color is Faded Navy
   let bgColor = UIColor(red: CGFloat(68/255.0), green: CGFloat(68/255.0), blue: CGFloat(68/255.0), alpha: CGFloat(1.0))
@@ -44,6 +45,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // Assign Delegates
     textField1.delegate = zipCodeDelegate
+    textField2.delegate = currencyDelegate
     
     // Change Keyboard type
     // textField1.keyboardType = UIKeyboardType.NumberPad

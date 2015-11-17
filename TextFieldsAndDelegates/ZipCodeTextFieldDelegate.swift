@@ -14,9 +14,9 @@ class ZipCodeTextFieldDelegate: NSObject, UITextFieldDelegate {
   func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
     
     // Check if new character is a string.
-    if (Int(string) == nil) {
-      return false
-    }
+//    if (Int(string) == nil) {
+//      return false
+//    }
     
     // Set up new text to be used.
     var newText: NSString = textField.text!
