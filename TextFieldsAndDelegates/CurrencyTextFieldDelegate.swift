@@ -37,6 +37,7 @@ class CurrencyTextFieldDelegate: NSObject, UITextFieldDelegate {
       // Remove any left over speicial characters.
       charSet = removeCharacter(charSet, remove: ".")
       charSet = removeCharacter(charSet, remove: "$")
+      charSet = removeCharacter(charSet, remove: ",")
 
       // Remove 0s from previous text.
       if charSet != [] {
@@ -63,12 +64,12 @@ class CurrencyTextFieldDelegate: NSObject, UITextFieldDelegate {
           } while charSet.count < 4
         }
         
-//        if charSet.count > 5 {
-//          let i: Int = (charSet.count - 3) / 3
-//          for n in 1...i {
-//            charSet.insert(
-//          }
-//        }
+        if charSet.count > 5 {
+          let i: Int = (charSet.count - 3) / 3
+          for n in (1...i).reverse() {
+            charSet.insert(",", atIndex: charSet.count - (3 * n) - 2)
+          }
+        }
         
         // Insert Decimal Point
         charSet.insert(".", atIndex: charSet.count - 2)
