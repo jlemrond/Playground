@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
   @IBOutlet weak var pickedImage: UIImageView!
   let imagePickerController = UIImagePickerController()
+  @IBOutlet weak var camraButton: UIBarButtonItem!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,18 +22,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     imagePickerController.delegate = self
     
   }
+  
+  override func viewWillAppear(animated: Bool) {
+    camraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+  }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
 
-  @IBAction func pickAnImage(sender: UIBarButtonItem) {
-
+  @IBAction func pickAnImageFromAlbum(sender: UIBarButtonItem) {
+    imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
     self.presentViewController(imagePickerController, animated: true, completion: nil)
-    
   }
   
+  @IBAction func pickAnImageFromCamera(sender: UIBarButtonItem) {
+    imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
+    self.presentViewController(imagePickerController, animated: true, completion: nil)
+  }
   
   //MARK: Image Picker Delegate Methods
   
