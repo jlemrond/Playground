@@ -12,21 +12,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
   var image: UIImageView = UIImageView()
   var textField: UITextField = UITextField()
+  var button = UIButton()
+  var thisView = UIView()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let textField = UITextField(frame: CGRect(x: 50, y: 475, width: 275, height: 30))
+    button = UIButton(frame: CGRect(x: 50, y: 475, width: 275, height: 30))
+    button.setTitle("Click", forState: .Normal)
+    button.setTitleColor(UIColor.blackColor(), forState: .Normal)
+    button.addTarget(self, action: "save", forControlEvents: .TouchUpInside)
+    
+    let textField = UITextField(frame: CGRect(x: 0, y: 250, width: 275, height: 30))
     textField.text = "Insert Text Here"
     textField.textAlignment = .Center
     textField.delegate = self
+    
+    thisView = UIView(frame: CGRect(x: 50, y: 50, width: 275, height: 400))
     
     image = UIImageView(frame: CGRect(x: 50, y: 50, width: 275, height: 400))
     image.contentMode = .ScaleAspectFit
     image.image = UIImage(named: "Photo10")!
     
     self.view.addSubview(image)
-    self.view.addSubview(textField)
+    image.addSubview(textField)
+    self.view.addSubview(button)
     
     
   }
@@ -74,6 +84,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
   func unsubscribeToKeyboardNotification() {
     NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
   }
-x
+  
+  func save() {
+    let newImage = image.generateMemeedImage()
+    image.image = newImage
+  }
+
+  func generateMemeedImage() -> UIImage {
+    UIGraphicsBeginImageContext(self.view.frame.size)
+    self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+    let memeedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return memeedImage
+  }
+}
+
+extension UIImageView {
+  
+  func generateMemeedImage() -> UIImage {
+    UIGraphicsBeginImageContext(self.frame.size)
+    self.drawViewHierarchyInRect(self.frame, afterScreenUpdates: true)
+    let memeedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return memeedImage
+  }
+  
 }
 
