@@ -9,17 +9,31 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
   @IBOutlet weak var pickedImage: UIImageView!
   let imagePickerController = UIImagePickerController()
   @IBOutlet weak var camraButton: UIBarButtonItem!
+  
+  @IBOutlet weak var topTextField: UITextField!
+  @IBOutlet weak var bottomTextField: UITextField!
+  
+  let textDelegate = textFieldDelegate()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
     imagePickerController.delegate = self
+    
+    topTextField.text = "TOP"
+    topTextField.textAlignment = .Center
+    
+    bottomTextField.text = "BOTTOM"
+    bottomTextField.textAlignment = .Center
+    
+    topTextField.delegate = textDelegate
+    bottomTextField.delegate = textDelegate
     
   }
   

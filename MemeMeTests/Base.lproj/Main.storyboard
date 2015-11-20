@@ -51,23 +51,49 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKY-mM-pyv">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="152" y="195" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sUo-Yf-k74">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="152" y="378" width="97" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dEM-Cf-3dH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1YE-OT-Ap3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fci-my-Ntp" secondAttribute="bottom" id="21K-aw-yXS"/>
+                            <constraint firstItem="sUo-Yf-k74" firstAttribute="top" secondItem="dEM-Cf-3dH" secondAttribute="bottom" constant="-45" id="9G6-yD-iZR"/>
+                            <constraint firstItem="hKY-mM-pyv" firstAttribute="centerX" secondItem="dEM-Cf-3dH" secondAttribute="centerX" id="MtP-cF-zrM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fci-my-Ntp" secondAttribute="trailing" constant="-20" id="Pb1-as-gTA"/>
                             <constraint firstItem="dEM-Cf-3dH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q63-9C-hPU"/>
+                            <constraint firstItem="dEM-Cf-3dH" firstAttribute="top" secondItem="hKY-mM-pyv" secondAttribute="bottom" constant="-45" id="tIv-MW-gbp"/>
                             <constraint firstItem="fci-my-Ntp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vl3-HA-6Ie"/>
+                            <constraint firstItem="sUo-Yf-k74" firstAttribute="centerX" secondItem="dEM-Cf-3dH" secondAttribute="centerX" id="yi6-d4-jgM"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="fci-my-Ntp"/>
                                 <exclude reference="dEM-Cf-3dH"/>
+                                <exclude reference="hKY-mM-pyv"/>
+                                <exclude reference="sUo-Yf-k74"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="1YE-OT-Ap3"/>
                                 <exclude reference="q63-9C-hPU"/>
+                                <exclude reference="tIv-MW-gbp"/>
+                                <exclude reference="MtP-cF-zrM"/>
+                                <exclude reference="9G6-yD-iZR"/>
+                                <exclude reference="yi6-d4-jgM"/>
                                 <exclude reference="Pb1-as-gTA"/>
                                 <exclude reference="vl3-HA-6Ie"/>
                                 <exclude reference="21K-aw-yXS"/>
@@ -77,10 +103,16 @@
                             <mask key="subviews">
                                 <include reference="fci-my-Ntp"/>
                                 <include reference="dEM-Cf-3dH"/>
+                                <include reference="hKY-mM-pyv"/>
+                                <include reference="sUo-Yf-k74"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="1YE-OT-Ap3"/>
                                 <include reference="q63-9C-hPU"/>
+                                <include reference="tIv-MW-gbp"/>
+                                <include reference="MtP-cF-zrM"/>
+                                <include reference="9G6-yD-iZR"/>
+                                <include reference="yi6-d4-jgM"/>
                                 <include reference="Pb1-as-gTA"/>
                                 <include reference="vl3-HA-6Ie"/>
                                 <include reference="21K-aw-yXS"/>
@@ -88,8 +120,10 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="sUo-Yf-k74" id="2Bq-cL-d22"/>
                         <outlet property="camraButton" destination="GNp-8i-hed" id="vFE-6L-grY"/>
                         <outlet property="pickedImage" destination="dEM-Cf-3dH" id="gui-J2-GQ9"/>
+                        <outlet property="topTextField" destination="hKY-mM-pyv" id="aLK-Hw-P3l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
