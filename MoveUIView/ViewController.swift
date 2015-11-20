@@ -14,6 +14,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
   var textField: UITextField = UITextField()
   var button = UIButton()
   var thisView = UIView()
+  var newImage = UIImage()
+  var shareButton = UIButton()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,6 +24,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     button.setTitle("Click", forState: .Normal)
     button.setTitleColor(UIColor.blackColor(), forState: .Normal)
     button.addTarget(self, action: "save", forControlEvents: .TouchUpInside)
+    
+    shareButton = UIButton(frame: CGRect(x: 50, y: 525, width: 275, height: 30))
+    shareButton.setTitle("Share", forState: .Normal)
+    shareButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+    shareButton.addTarget(self, action: "share", forControlEvents: .TouchUpInside)
     
     let textField = UITextField(frame: CGRect(x: 0, y: 250, width: 275, height: 30))
     textField.text = "Insert Text Here"
@@ -37,6 +44,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     self.view.addSubview(image)
     image.addSubview(textField)
     self.view.addSubview(button)
+    self.view.addSubview(shareButton)
     
     
   }
@@ -85,9 +93,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
   }
   
-  func save() {
-    let newImage = image.generateMemeedImage()
-    image.image = newImage
+  func save() -> UIImage {
+    newImage = image.generateMemeedImage()
+    return newImage
+  }
+  
+  func share() {
+    let shareImage = image.generateMemeedImage()
+    let activityViewController = UIActivityViewController(activityItems: [shareImage], applicationActivities: nil)
+    self.presentViewController(activityViewController, animated: true, completion: nil)
+    
+    //navigationController?.presentViewController(acitvityViewController, animated: true, completion: nil)
   }
 
   func generateMemeedImage() -> UIImage {
@@ -102,8 +118,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
 extension UIImageView {
   
   func generateMemeedImage() -> UIImage {
-    UIGraphicsBeginImageContext(self.frame.size)
-    self.drawViewHierarchyInRect(self.frame, afterScreenUpdates: true)
+    UIGraphicsBeginImageContext(frame.size)
+    drawViewHierarchyInRect(frame, afterScreenUpdates: true)
     let memeedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     return memeedImage
