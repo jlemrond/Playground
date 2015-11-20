@@ -51,20 +51,52 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKY-mM-pyv">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="152" y="195" width="97" height="30"/>
-                                </variation>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sUo-Yf-k74">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="APT-uB-pGm"/>
+                                    <constraint firstAttribute="height" constant="30" id="S91-5X-1b2">
+                                        <variation key="widthClass=compact" constant="45"/>
+                                    </constraint>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="APT-uB-pGm"/>
+                                        <exclude reference="S91-5X-1b2"/>
+                                    </mask>
+                                </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="152" y="378" width="97" height="30"/>
+                                    <rect key="frame" x="92" y="378" width="210" height="30"/>
+                                    <mask key="constraints">
+                                        <include reference="APT-uB-pGm"/>
+                                        <include reference="S91-5X-1b2"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKY-mM-pyv">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="fvV-j0-hT6"/>
+                                    <constraint firstAttribute="height" constant="40" id="gsx-HO-wVW">
+                                        <variation key="widthClass=compact" constant="45"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fvV-j0-hT6"/>
+                                        <exclude reference="gsx-HO-wVW"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="92" y="195" width="210" height="30"/>
+                                    <mask key="constraints">
+                                        <include reference="fvV-j0-hT6"/>
+                                        <include reference="gsx-HO-wVW"/>
+                                    </mask>
                                 </variation>
                             </textField>
                         </subviews>
@@ -72,7 +104,9 @@
                         <constraints>
                             <constraint firstItem="dEM-Cf-3dH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1YE-OT-Ap3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fci-my-Ntp" secondAttribute="bottom" id="21K-aw-yXS"/>
-                            <constraint firstItem="sUo-Yf-k74" firstAttribute="top" secondItem="dEM-Cf-3dH" secondAttribute="bottom" constant="-45" id="9G6-yD-iZR"/>
+                            <constraint firstItem="sUo-Yf-k74" firstAttribute="top" secondItem="dEM-Cf-3dH" secondAttribute="bottom" constant="-45" id="9G6-yD-iZR">
+                                <variation key="widthClass=compact" constant="-60"/>
+                            </constraint>
                             <constraint firstItem="hKY-mM-pyv" firstAttribute="centerX" secondItem="dEM-Cf-3dH" secondAttribute="centerX" id="MtP-cF-zrM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fci-my-Ntp" secondAttribute="trailing" constant="-20" id="Pb1-as-gTA"/>
                             <constraint firstItem="dEM-Cf-3dH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q63-9C-hPU"/>
@@ -84,8 +118,8 @@
                             <mask key="subviews">
                                 <exclude reference="fci-my-Ntp"/>
                                 <exclude reference="dEM-Cf-3dH"/>
-                                <exclude reference="hKY-mM-pyv"/>
                                 <exclude reference="sUo-Yf-k74"/>
+                                <exclude reference="hKY-mM-pyv"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="1YE-OT-Ap3"/>
@@ -103,8 +137,8 @@
                             <mask key="subviews">
                                 <include reference="fci-my-Ntp"/>
                                 <include reference="dEM-Cf-3dH"/>
-                                <include reference="hKY-mM-pyv"/>
                                 <include reference="sUo-Yf-k74"/>
+                                <include reference="hKY-mM-pyv"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="1YE-OT-Ap3"/>
